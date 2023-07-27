@@ -32,7 +32,7 @@
     }
 
     .progressBar {
-        width: 5rem;
+        width: 10rem;
         height: 1rem;
         position: absolute;
         bottom: 30px;
@@ -47,8 +47,23 @@
         .activeBar {
             width: 3rem;
             height: 0.6rem;
-            border-radius: 10%;
+            border-radius: 10px;
             background-color: #ffffff;
+            overflow: hidden;
+
+            .progress-fill {
+               height: 100%;
+               background-color: rgb(252, 124, 4);
+               animation: fill 4s ease;
+            }
+            @keyframes fill {
+                0% {
+                    width: 0%;
+                }
+                100% {
+                    width: 100%;
+                }
+            }
         }
 
         .bar {
@@ -62,17 +77,16 @@
   
     .sliderImageContainer {
         display: flex;
-        transition: transform 1.5s ease;
+        // transition: transform 1.5s ease;
 
         .slide {
             min-width: 100%;
             height: 100vh;
-            background-image:linear-gradient(rgba(234, 30, 30, 0.9),rgba(246, 13, 13, 0.9));
-
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                aspect-ratio: 16/9;
             }
         }
     }
